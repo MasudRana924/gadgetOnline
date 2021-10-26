@@ -1,0 +1,50 @@
+#input-group-dropdown-1{
+    color:white;
+    outline: none;
+    font-weight: bold;
+    border:1px solid #00C642;
+    outline-color: black;
+    width:100%;
+    background-color:#00C642  ;
+}
+.input{
+    border:1px solid rgba(128, 128, 128, 0.479);
+    outline-style: none;
+    width:100%;
+}
+.cart-icon{
+    color: #00C642;
+    font-size: 25px;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+.cart-item{
+    position:absolute;
+    margin-top: -12px;
+    margin-left: -10px;
+    text-decoration: none;
+     font-weight: 700;
+     color: black;
+   
+}
+.cart-class{
+    display: none;
+}
+.cart-button{
+    border:#00C642 ;
+}
+.phone{
+    height:40px;
+    width:40px;
+    background-color:rgba(211, 211, 211, 0.288);
+}
+.phone-icon{
+    color:#00C642 ;
+    font-size: 20px;
+  margin-top: 8px;
+    
+}
+.span{
+    font-size: 12px;
+    font-weight: bold;
+}
