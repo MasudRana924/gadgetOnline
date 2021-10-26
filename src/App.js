@@ -2,8 +2,7 @@ import './App.css';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom"
 import Header from './Pages/Shared/Header/Header';
 import Home from './Pages/Home/Home';
@@ -14,13 +13,13 @@ function App() {
       <Router>
         <Header></Header>
         <Switch>
-          <Route exact path="/">
+          <Route exact path='/'>
               <Home></Home>
           </Route>
-          <Route path="/home">
+          <Route path='/home'>
               <Home></Home>
           </Route>
-          <Route path="/shipping">
+          <Route path='/shipping'>
              <Shipping></Shipping>
           </Route>
          

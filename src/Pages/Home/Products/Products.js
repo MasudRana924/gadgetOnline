@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Container, Dropdown, DropdownButton, Row, Button, Modal } from 'react-bootstrap';
+import { Col, Container, Dropdown, DropdownButton, Row, Button, Modal, Spinner } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart, faPhoneAlt } from '@fortawesome/free-solid-svg-icons'
 import './Products.css'
@@ -11,35 +11,55 @@ import { addToDb, getStoredCart } from '../../../Utilies/FakeDb';
 const Products = () => {
     const [products, setProducts] = useState([])
     const [displayProducts, setDisplayProducts] = useState([]);
+    const [pageCount, setPageCount] = useState(0)
+    const [page, setPage] = useState(0)
     const [cart, setCart] = useState([])
     const [show, setShow] = useState(false);
-
+    const size = 12
 
     useEffect(() => {
-        fetch('./products.json')
+        fetch(`http://localhost:5000/products?page=${page}&&size=${size}`)
             .then(res => res.json())
             .then(data => {
-                setProducts(data)
-                setDisplayProducts(data)
+                setProducts(data.products)
+                setDisplayProducts(data.products)
+                const count = data.count
+                const pageNumber = Math.ceil(count / size)
+                setPageCount(pageNumber)
             })
-    }, [])
+    }, [page])
     useEffect(() => {
-        if (products.length) {
-            //savedcart e database theke data store kora hoise
-            const savedCart = getStoredCart();
-            const storedCart = [];
-            for (const key in savedCart) {
-                const addedProduct = products.find(product => product.key === key);
-                if (addedProduct) {
-                    const quantity = savedCart[key];
-                    addedProduct.quantity = quantity;
-                    storedCart.push(addedProduct);
-                }
-            }
-            setCart(storedCart);
-        }
+        const savedCart=getStoredCart()
+        console.log(savedCart)
+        const keys=Object.keys(savedCart)
+        fetch('http://localhost:5000/products/bykeys',{
+            method:"POST",
+            headers:{
+                'content-type':'application/json'
+            },
+            body:JSON.stringify(keys)
+  
+        })
+        .then(res=>res.json())
+        .then(products=>{
+          
+             if (products.length) {
+              
+              const storedCart = [];
+              for (const key in savedCart) {
+                  const addedProduct = products.find(product => product.key === key);
+                  if (addedProduct) {
+                      // set quantity
+                      const quantity = savedCart[key];
+                      addedProduct.quantity = quantity;
+                      storedCart.push(addedProduct);
+                  }
+              }
+              setCart(storedCart);
+          }
+        })
 
-    }, [products])
+    }, [])
 
     const handleAddToCart = product => {
         // compare kora hoise ager cart er moddhe ja add kora hoichilo 
@@ -138,9 +158,9 @@ const Products = () => {
                                             Close
                                         </Button>
                                         <Link to="/shipping">
-                                        <Button variant="primary">
-                                            Proceed
-                                        </Button>
+                                            <Button variant="primary">
+                                                Proceed
+                                            </Button>
                                         </Link>
                                     </Modal.Footer>
                                 </Modal>
@@ -167,15 +187,29 @@ const Products = () => {
             </div>
 
             <div className="">
-                <Row xs={1} md={4}>
+                {displayProducts.length === 0 ? < div className="spinner"> <Spinner animation="border" className="spinner" />
+                </div>
+                    : <Row xs={1} md={4}>
+                        {
+                            displayProducts.map(product => <Product
+                                key={product.id}
+                                product={product}
+                                handleAddToCart={handleAddToCart}
+                            ></Product>)
+                        }
+                    </Row>
+                }
+                <div className="pagination w-50 mx-auto">
                     {
-                      displayProducts.map(product => <Product
-                            key={product.id}
-                            product={product}
-                            handleAddToCart={handleAddToCart}
-                        ></Product>)
-                    }
-                </Row>
+                            [...Array(pageCount).keys()].map(number => <button
+                                key={number}
+                                onClick={() => setPage(number)}
+                                className={number === page ? 'selected' : ''}
+
+                            >{number + 1}</button>)
+                      }
+                
+                </div>
             </div>
 
         </Container>

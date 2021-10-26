@@ -48,3 +48,19 @@
     font-size: 12px;
     font-weight: bold;
 }
+.pagination{
+    margin:30px;
+}
+.pagination button{
+    margin-right: 20px;
+    padding:0px 10px;
+    border:#00C642 ;
+    border-radius: 15px;
+}
+.pagination .selected{
+    background-color: #00C642 ;
+    color:white;
+}
+.spinner{
+    color:#00C642;
+}
