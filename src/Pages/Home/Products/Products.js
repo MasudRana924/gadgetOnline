@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Container, Dropdown, DropdownButton, Row, Button, Modal, Spinner } from 'react-bootstrap';
+import { Col, Container, Dropdown, DropdownButton, Row, Button, Modal, Spinner, Carousel } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart, faPhoneAlt } from '@fortawesome/free-solid-svg-icons'
 import './Products.css'
@@ -8,6 +8,9 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import Product from '../Product/Product';
 import { addToDb, getStoredCart } from '../../../Utilies/FakeDb';
+import img from '../../../Images/laptop.jpg'
+import img2 from '../../../Images/headphone.jpg'
+import img3 from '../../../Images/01.jpg'
 const Products = () => {
     const [products, setProducts] = useState([])
     const [displayProducts, setDisplayProducts] = useState([]);
@@ -18,7 +21,7 @@ const Products = () => {
     const size = 12
 
     useEffect(() => {
-        fetch(`http://localhost:5000/products?page=${page}&&size=${size}`)
+        fetch(`https://whispering-beyond-98113.herokuapp.com/products?page=${page}&&size=${size}`)
             .then(res => res.json())
             .then(data => {
                 setProducts(data.products)
@@ -29,35 +32,35 @@ const Products = () => {
             })
     }, [page])
     useEffect(() => {
-        const savedCart=getStoredCart()
+        const savedCart = getStoredCart()
         console.log(savedCart)
-        const keys=Object.keys(savedCart)
-        fetch('http://localhost:5000/products/bykeys',{
-            method:"POST",
-            headers:{
-                'content-type':'application/json'
+        const keys = Object.keys(savedCart)
+        fetch('https://whispering-beyond-98113.herokuapp.com/products/bykeys', {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json'
             },
-            body:JSON.stringify(keys)
-  
+            body: JSON.stringify(keys)
+
         })
-        .then(res=>res.json())
-        .then(products=>{
-          
-             if (products.length) {
-              
-              const storedCart = [];
-              for (const key in savedCart) {
-                  const addedProduct = products.find(product => product.key === key);
-                  if (addedProduct) {
-                      // set quantity
-                      const quantity = savedCart[key];
-                      addedProduct.quantity = quantity;
-                      storedCart.push(addedProduct);
-                  }
-              }
-              setCart(storedCart);
-          }
-        })
+            .then(res => res.json())
+            .then(products => {
+
+                if (products.length) {
+
+                    const storedCart = [];
+                    for (const key in savedCart) {
+                        const addedProduct = products.find(product => product.key === key);
+                        if (addedProduct) {
+                            // set quantity
+                            const quantity = savedCart[key];
+                            addedProduct.quantity = quantity;
+                            storedCart.push(addedProduct);
+                        }
+                    }
+                    setCart(storedCart);
+                }
+            })
 
     }, [])
 
@@ -185,7 +188,85 @@ const Products = () => {
                     </Col>
                 </Row>
             </div>
+            <div>
+                <Carousel className="slider">
+                    <Carousel.Item interval={1000} className="slider ">
+                        <Row md={2}>
+                            <Col md={6}>
+                            <h1 className="text-start">Cool Dude Laptop
+                            </h1>
+                            <p className="text-start">This is the best headphone in the world for people who just want to waste time in
+                                front of funky world.</p>
+                            <h1 className="text-start">$420</h1>
 
+                            <button class="btn btn-danger me-5">
+                                Buy Now
+                            </button>
+                            </Col>
+                          
+                            <Col md={6}>
+                                <img
+                                    className="d-block w-100 h-100 img-fluid"
+                                    src={img}
+                                    alt="First slide"
+                                />
+                            </Col>
+                        </Row>
+
+
+
+
+                    </Carousel.Item>
+                    <Carousel.Item interval={500} className="slider">
+                    <Row md={2}>
+                            <Col md={6}>
+                            <h1 className="text-start">Cool Dude HeadPhone
+                            </h1>
+                            <p className="text-start">This is the best headphone in the world for people who just want to waste time in
+                                front of funky world.</p>
+                            <h1 className="text-start">$120</h1>
+
+                            <button class="btn btn-danger me-5">
+                                Buy Now
+                            </button>
+                            </Col>
+                          
+                            <Col md={6}>
+                                <img
+                                    className=" w-100 h-100 img-fluid"
+                                    src={img2}
+                                    alt="First slide"
+                                />
+                            </Col>
+                        </Row>
+
+                    </Carousel.Item>
+                    <Carousel.Item className="slider">
+                    <Row md={2}>
+                            <Col md={6}>
+                            <h1 className="text-start">Cool Dude EarPod
+                            </h1>
+                            <p className="text-start">This is the best headphone in the world for people who just want to waste time in
+                                front of funky world.</p>
+                            <h1 className="text-start">$20</h1>
+
+                            <button class="btn btn-danger me-5">
+                                Buy Now
+                            </button>
+                            </Col>
+                          
+                            <Col md={6}>
+                                <img
+                                    className="d-block w-100 h-100 img-fluid"
+                                    src={img3}
+                                    alt="First slide"
+                                />
+                            </Col>
+                        </Row>
+
+                    </Carousel.Item>
+                </Carousel>
+            </div>
             <div className="">
                 {displayProducts.length === 0 ? < div className="spinner"> <Spinner animation="border" className="spinner" />
                 </div>
@@ -201,14 +282,14 @@ const Products = () => {
                 }
                 <div className="pagination w-50 mx-auto">
                     {
-                            [...Array(pageCount).keys()].map(number => <button
-                                key={number}
-                                onClick={() => setPage(number)}
-                                className={number === page ? 'selected' : ''}
+                        [...Array(pageCount).keys()].map(number => <button
+                            key={number}
+                            onClick={() => setPage(number)}
+                            className={number === page ? 'selected' : ''}
 
-                            >{number + 1}</button>)
-                      }
-                
+                        >{number + 1}</button>)
+                    }
+
                 </div>
             </div>
 

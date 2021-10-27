@@ -1,0 +1,36 @@
+.details-card{
+    display: flex;
+  
+}
+.details-card img{
+   height: 200px;
+   width:400px;
+
+  
+}
+
+.details{
+    margin-left: 15px;
+    border:1px solid white;
+    border-radius: 10px;
+    background-color: #fff;
+}
+.button-cart{
+    background-color: #FF5733 ;
+    border:#FF5733 ;
+    margin-right: 5px;
+    line-height: 35px;
+    width:45%;
+    margin-top: 10px;
+ 
+}
+.button-buy{
+    background-color: DarkOrange;
+    border:DarkOrange;
+    line-height: 35px;
+    width:45%;
+    margin-top: 10px;
+}
+.icon-color{
+    background-color: DarkOrange;
+}
