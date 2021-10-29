@@ -43,13 +43,13 @@ const Admin = () => {
                 <Col md={3}>
 
 
-                    <div >
+                    <div className="info">
 
                         <Link className="text-decoration-none">
 
-                            <p className="mt-3"> <FontAwesomeIcon icon={faUserFriends} className=" mt-3 text-primary me-1" /> Products list</p>
+                            <p className="mt-3"> <FontAwesomeIcon icon={faUserFriends} className=" mt-3 text-primary me-1" /> Orders list</p>
                         </Link>
-                        <Link className="text-decoration-none">
+                        <Link to="/add" className="text-decoration-none">
 
                             <p >
                                 <FontAwesomeIcon icon={faPlus} className=" mt-3 text-danger me-1" />
@@ -62,24 +62,24 @@ const Admin = () => {
 
                 </Col>
                 <Col md={9}>
-                    <div className="event-list">
-                        <div className="d-flex">
-                           <div className="info-name">
+                    <div className=" form">
+                        <div className="d-flex ">
+                           <div className="info-name info">
                              <h6 className="ms-3 text-primary">Name</h6>
                            </div>
-                           <div className="info-email">
+                           <div className="info-email info">
                            <h6 className=" text-primary">Email</h6>
                            </div>
-                           <div className="info-phone">
+                           <div className="info-phone info">
                            <h6 className=" text-primary">Phone</h6>
                            </div>
-                           <div className="info-address">
+                           <div className="info-address info">
                            <h6 className=" text-primary">Address</h6>
                            </div>
-                           <div className="info-city">
+                           <div className="info-city info">
                            <h6 className=" text-primary">City</h6>
                            </div>
-                           <div className="delete">
+                           <div className="delete info">
                            <h6 className=" text-primary">Delete</h6>
                            </div>
                         </div>
@@ -87,7 +87,7 @@ const Admin = () => {
                             orders.map(order =>
 
 
-                                <div className="d-flex mt-3">
+                                <div className="d-flex mt-3 info">
 
                                     <div className="info-name">
 
@@ -108,7 +108,7 @@ const Admin = () => {
                                     </div>
                                     <div className="delete">
                                         <button  onClick={()=>handleDeleteUser(order._id)} className="delete-button">
-                                        <FontAwesomeIcon icon={faTrashAlt} className=" text-danger" />
+                                        <FontAwesomeIcon icon={faTrashAlt} className="fs-3 text-danger" />
                                         </button>
                                     
                                     </div>

@@ -10,6 +10,7 @@ import Shipping from './Pages/Shipping/Shipping';
 import Details from './Pages/Details/Details';
 import Admin from './Admin/Admin';
 import Footer from './Pages/Shared/Footer/Footer';
+import AddProducts from './AddProducts/AddProducts';
 function App() {
   return (
     <div className="App">
@@ -31,6 +32,9 @@ function App() {
           </Route>
           <Route path="/owner">
             <Admin></Admin>
+          </Route>
+          <Route path="/add">
+            <AddProducts></AddProducts>
           </Route>
          
         </Switch>

@@ -6,6 +6,13 @@
     width:15%;
     text-align: start;
 }
+.info p{
+    font-weight: bold;
+}
+.info h6{
+    font-weight:bolder;
+    font-size: 20px;
+}
 .info-email{
     width:30%;
     text-align: start;
