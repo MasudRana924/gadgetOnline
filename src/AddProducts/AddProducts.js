@@ -26,7 +26,7 @@ const AddProducts = () => {
         const price=priceRef.current.value 
         const img=imgRef.current.value 
         const product={key,cat,name,seller,stock,star,price,img}
-        fetch('http://localhost:5000/products',{
+        fetch('https://whispering-beyond-98113.herokuapp.com/products',{
             method:'post',
             headers:{
                 'content-type':'application/json'
