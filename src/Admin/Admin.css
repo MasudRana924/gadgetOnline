@@ -1,0 +1,31 @@
+.event-list{
+    border:1px  solid gray;
+    width:100%;
+}
+.info-name{
+    width:15%;
+    text-align: start;
+}
+.info-email{
+    width:30%;
+    text-align: start;
+}
+.info-city{
+    width:10%;
+    text-align: start;
+}
+.info-phone{
+    width:15%;
+    text-align: start;
+}
+.info-address{
+    width:15%;
+    text-align: start;
+}
+.delete{
+    width:15%;
+    text-align: start;
+}
+.delete-button{
+    border:none
+}

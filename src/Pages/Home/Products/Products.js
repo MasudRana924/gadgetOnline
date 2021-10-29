@@ -191,78 +191,28 @@ const Products = () => {
             <div>
                 <Carousel className="slider">
                     <Carousel.Item interval={1000} className="slider ">
-                        <Row md={2}>
-                            <Col md={6}>
-                            <h1 className="text-start">Cool Dude Laptop
-                            </h1>
-                            <p className="text-start">This is the best headphone in the world for people who just want to waste time in
-                                front of funky world.</p>
-                            <h1 className="text-start">$420</h1>
-
-                            <button class="btn btn-danger me-5">
-                                Buy Now
-                            </button>
-                            </Col>
-                          
-                            <Col md={6}>
-                                <img
-                                    className="d-block w-100 h-100 img-fluid"
-                                    src={img}
-                                    alt="First slide"
-                                />
-                            </Col>
-                        </Row>
-
-
-
+                        <img
+                            className="image-slider"
+                            src={img}
+                            alt="First slide"
+                        />
 
                     </Carousel.Item>
                     <Carousel.Item interval={500} className="slider">
-                    <Row md={2}>
-                            <Col md={6}>
-                            <h1 className="text-start">Cool Dude HeadPhone
-                            </h1>
-                            <p className="text-start">This is the best headphone in the world for people who just want to waste time in
-                                front of funky world.</p>
-                            <h1 className="text-start">$120</h1>
-
-                            <button class="btn btn-danger me-5">
-                                Buy Now
-                            </button>
-                            </Col>
-                          
-                            <Col md={6}>
-                                <img
-                                    className=" w-100 h-100 img-fluid"
-                                    src={img2}
-                                    alt="First slide"
-                                />
-                            </Col>
-                        </Row>
+                        <img
+                            className="image-slider"
+                            src={img2}
+                            alt="First slide"
+                        />
 
                     </Carousel.Item>
                     <Carousel.Item className="slider">
-                    <Row md={2}>
-                            <Col md={6}>
-                            <h1 className="text-start">Cool Dude EarPod
-                            </h1>
-                            <p className="text-start">This is the best headphone in the world for people who just want to waste time in
-                                front of funky world.</p>
-                            <h1 className="text-start">$20</h1>
 
-                            <button class="btn btn-danger me-5">
-                                Buy Now
-                            </button>
-                            </Col>
-                          
-                            <Col md={6}>
-                                <img
-                                    className="d-block w-100 h-100 img-fluid"
-                                    src={img3}
-                                    alt="First slide"
-                                />
-                            </Col>
-                        </Row>
+                        <img
+                            className="image-slider"
+                            src={img3}
+                            alt="First slide"
+                        />
 
                     </Carousel.Item>
                 </Carousel>
