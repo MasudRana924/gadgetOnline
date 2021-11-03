@@ -1,0 +1,132 @@
+[debug] [2021-11-02T14:54:44.293Z] ----------------------------------------------------------------------
+[debug] [2021-11-02T14:54:44.298Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Masud\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2021-11-02T14:54:44.298Z] CLI Version:   9.21.0
+[debug] [2021-11-02T14:54:44.299Z] Platform:      win32
+[debug] [2021-11-02T14:54:44.299Z] Node Version:  v16.6.1
+[debug] [2021-11-02T14:54:44.455Z] Time:          Tue Nov 02 2021 08:54:44 GMT-0600 (Central Standard Time)
+[debug] [2021-11-02T14:54:44.456Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-11-02T14:54:44.663Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-11-02T14:54:44.663Z] > authorizing via signed-in user (masud15-924@diu.edu.bd)
+[debug] [2021-11-02T14:54:44.664Z] [iam] checking project electro-gadget-1d5b5 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2021-11-02T14:54:44.721Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-11-02T14:54:44.721Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-11-02T14:55:06.213Z] [iam] error while checking permissions, command may fail: FirebaseError: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2021-11-02T14:55:06.215Z] > refreshing access token with scopes: []
+[debug] [2021-11-02T14:55:06.216Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-11-02T14:55:27.255Z] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2021-11-02T14:55:48.316Z] FirebaseError: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+    at invalidCredentialError (C:\Users\Masud\AppData\Roaming\npm\node_modules\firebase-tools\lib\auth.js:141:12)
+    at refreshTokens (C:\Users\Masud\AppData\Roaming\npm\node_modules\firebase-tools\lib\auth.js:448:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async Client.getAccessToken (C:\Users\Masud\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:146:23)
+    at async Client.addAuthHeader (C:\Users\Masud\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:137:21)
+    at async Client.request (C:\Users\Masud\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:93:34)
+    at async Object.getFirebaseProject (C:\Users\Masud\AppData\Roaming\npm\node_modules\firebase-tools\lib\management\projects.js:290:21)
+    at async Object.getDefaultHostingSite (C:\Users\Masud\AppData\Roaming\npm\node_modules\firebase-tools\lib\getDefaultHostingSite.js:8:21)
+    at async requireHostingSite (C:\Users\Masud\AppData\Roaming\npm\node_modules\firebase-tools\lib\requireHostingSite.js:9:18)
+    at async Object.fn (C:\Users\Masud\AppData\Roaming\npm\node_modules\firebase-tools\lib\commands\deploy.js:65:9)
+    at async C:\Users\Masud\AppData\Roaming\npm\node_modules\firebase-tools\lib\command.js:188:17
+[error] 
+[error] Error: Failed to get Firebase project electro-gadget-1d5b5. Please make sure the project exists and your account has permission to access it.
+[debug] [2021-11-02T15:02:31.937Z] ----------------------------------------------------------------------
+[debug] [2021-11-02T15:02:31.943Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Masud\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2021-11-02T15:02:31.944Z] CLI Version:   9.21.0
+[debug] [2021-11-02T15:02:31.944Z] Platform:      win32
+[debug] [2021-11-02T15:02:31.944Z] Node Version:  v16.6.1
+[debug] [2021-11-02T15:02:31.946Z] Time:          Tue Nov 02 2021 09:02:31 GMT-0600 (Central Standard Time)
+[debug] [2021-11-02T15:02:31.947Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-11-02T15:02:32.076Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-11-02T15:02:32.077Z] > authorizing via signed-in user (masud15-924@diu.edu.bd)
+[debug] [2021-11-02T15:02:32.077Z] [iam] checking project electro-gadget-1d5b5 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2021-11-02T15:02:32.082Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-11-02T15:02:32.083Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-11-02T15:02:53.195Z] [iam] error while checking permissions, command may fail: FirebaseError: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2021-11-02T15:02:53.203Z] > refreshing access token with scopes: []
+[debug] [2021-11-02T15:02:53.204Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-11-02T15:03:14.262Z] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2021-11-02T15:03:35.331Z] FirebaseError: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+    at invalidCredentialError (C:\Users\Masud\AppData\Roaming\npm\node_modules\firebase-tools\lib\auth.js:141:12)
+    at refreshTokens (C:\Users\Masud\AppData\Roaming\npm\node_modules\firebase-tools\lib\auth.js:448:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async Client.getAccessToken (C:\Users\Masud\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:146:23)
+    at async Client.addAuthHeader (C:\Users\Masud\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:137:21)
+    at async Client.request (C:\Users\Masud\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:93:34)
+    at async Object.getFirebaseProject (C:\Users\Masud\AppData\Roaming\npm\node_modules\firebase-tools\lib\management\projects.js:290:21)
+    at async Object.getDefaultHostingSite (C:\Users\Masud\AppData\Roaming\npm\node_modules\firebase-tools\lib\getDefaultHostingSite.js:8:21)
+    at async requireHostingSite (C:\Users\Masud\AppData\Roaming\npm\node_modules\firebase-tools\lib\requireHostingSite.js:9:18)
+    at async Object.fn (C:\Users\Masud\AppData\Roaming\npm\node_modules\firebase-tools\lib\commands\deploy.js:65:9)
+    at async C:\Users\Masud\AppData\Roaming\npm\node_modules\firebase-tools\lib\command.js:188:17
+[error] 
+[error] Error: Failed to get Firebase project electro-gadget-1d5b5. Please make sure the project exists and your account has permission to access it.
+[debug] [2021-11-02T15:04:22.838Z] ----------------------------------------------------------------------
+[debug] [2021-11-02T15:04:22.843Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Masud\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2021-11-02T15:04:22.844Z] CLI Version:   9.21.0
+[debug] [2021-11-02T15:04:22.845Z] Platform:      win32
+[debug] [2021-11-02T15:04:22.845Z] Node Version:  v16.6.1
+[debug] [2021-11-02T15:04:22.847Z] Time:          Tue Nov 02 2021 09:04:22 GMT-0600 (Central Standard Time)
+[debug] [2021-11-02T15:04:22.847Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-11-02T15:04:22.990Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-11-02T15:04:22.991Z] > authorizing via signed-in user (masud15-924@diu.edu.bd)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\wdc\electro-ecommerce-starter
+
+Before we get started, keep in mind:
+
+  * You are currently outside your home directory
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[info] i  .firebaserc already has a default project, using electro-gadget-1d5b5. 
+[debug] [2021-11-02T15:04:47.761Z] > refreshing access token with scopes: []
+[debug] [2021-11-02T15:04:47.764Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-11-02T15:05:09.185Z] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2021-11-02T15:05:30.309Z] FirebaseError: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+    at invalidCredentialError (C:\Users\Masud\AppData\Roaming\npm\node_modules\firebase-tools\lib\auth.js:141:12)
+    at refreshTokens (C:\Users\Masud\AppData\Roaming\npm\node_modules\firebase-tools\lib\auth.js:448:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async Client.getAccessToken (C:\Users\Masud\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:146:23)
+    at async Client.addAuthHeader (C:\Users\Masud\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:137:21)
+    at async Client.request (C:\Users\Masud\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:93:34)
+    at async Object.getFirebaseProject (C:\Users\Masud\AppData\Roaming\npm\node_modules\firebase-tools\lib\management\projects.js:290:21)
+    at async Object.doSetup [as project] (C:\Users\Masud\AppData\Roaming\npm\node_modules\firebase-tools\lib\init\features\project.js:77:27)
+    at async init (C:\Users\Masud\AppData\Roaming\npm\node_modules\firebase-tools\lib\init\index.js:19:9)
+[error] 
+[error] Error: Failed to get Firebase project electro-gadget-1d5b5. Please make sure the project exists and your account has permission to access it.
